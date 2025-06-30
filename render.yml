@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: vat-registration-api
+    env: java
+    buildCommand: mvn clean package -DskipTests
+    startCommand: java -jar target/vat-registration-0.0.1-SNAPSHOT.jar
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: vat-registration-db
+          property: connectionString
+      - key: DB_USERNAME
+        fromDatabase:
+          name: vat-registration-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: vat-registration-db
+          property: password
+
+databases:
+  - name: vat-registration-db
+    databaseName: vatdb
+    user: vatuser
