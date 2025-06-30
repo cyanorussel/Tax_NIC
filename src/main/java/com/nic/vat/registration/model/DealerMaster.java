@@ -8,7 +8,6 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "\"web_trn_dlr_mst\"", schema = "tvat")
-
 @Data
 public class DealerMaster {
 
@@ -18,7 +17,6 @@ public class DealerMaster {
 
     @Column(name = "\"ack_date\"", nullable = false)
     private LocalDate ackDate;
-
 
     @Column(name = "tin_no")
     private BigDecimal tinNo;
@@ -109,10 +107,4 @@ public class DealerMaster {
 
     @Column(name = "perm_dist_cd")
     private BigDecimal permDistCd;
-
-    // ... You can continue adding other fields similarly based on project need.
 }
-
-
-
-
